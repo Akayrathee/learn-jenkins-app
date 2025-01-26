@@ -3,7 +3,8 @@ pipeline {
         stages {
             stage('Docker NPM'){
                 
-                agent docker {
+                agent {
+                docker {
                     image 'node:18-alpine'
                 }
                 steps{
@@ -11,7 +12,8 @@ pipeline {
                     node --version
                     npm --version
                     '''
-                }    
+                }  
+            }  
             }
         }
 }
